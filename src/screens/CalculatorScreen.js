@@ -10,7 +10,7 @@ const CalculatorScreen = () => {
   const [integerfirst, first] = useState('');
   const [integersecond, second] = useState('');
   const [operator, setOperator] = useState('');
-  const [result, setResult] = useState(0)
+  const [answer, setAnswer] = useState(0)
 
   validate = (integerfirst, integersecond, operator) => {
     let value
@@ -47,7 +47,7 @@ const CalculatorScreen = () => {
         <StatusBar style="auto" />
         <View style={{width: 300, height: 60, backgroundColor: 'grey', marginTop: 30,  justifyContent: 'flex-end'}}>
           <Text style={{alignSelf: 'flex-end', marginRight: 7, fontSize: 40}}>
-            {result}
+            {answer}
           </Text>
         </View>
         <View style={{flexDirection: 'row', justifyContent: "space-between"}}>
@@ -57,14 +57,14 @@ const CalculatorScreen = () => {
         <View style={{flexDirection: 'row', justifyContent: "space-between"}} >
           <TextInput
             value={integerfirst}
-            style={{ height: 35, width: 100, borderColor: 'grey', borderWidth: 2, color: 'white', paddingLeft: 45 }}
+            style={{ height: 35, width: 100, borderColor: 'black', borderWidth: 2, color: 'white', paddingLeft: 45 }}
             onChangeText={value => first(value)}
             keyboardType="numeric"
           />
           <Text style={styles.textOperator}>{"    "}{operator}{"    "}</Text>
           <TextInput
             value={integersecond}
-            style={{ height: 35, width: 100, borderColor: 'grey', borderWidth: 2, color: 'white', paddingLeft: 45 }}
+            style={{ height: 35, width: 100, borderColor: 'black', borderWidth: 2, color: 'white', paddingLeft: 45 }}
             onChangeText={value => second(value)}
             keyboardType="numeric"
           />
@@ -89,7 +89,7 @@ const CalculatorScreen = () => {
           <Text>{"        "}</Text>
           <TouchableOpacity
             onPress={() => {
-              setResult(validate(integerfirst, integersecond, operator));
+              setAnswer(validate(integerfirst, integersecond, operator));
             }}
             style={styles.buttonZ}
           ><Text style={{ color: 'white' }} >Submit</Text>
@@ -112,19 +112,19 @@ const styles = StyleSheet.create({
 
   container2: {
     flexDirection: 'row',
-    backgroundColor: 'grey',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#121212',
+    backgroundColor: 'black',
     color: 'white'
   },
 
   container3: {
     flexDirection: 'row',
-    backgroundColor: 'grey',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'grey',
+    backgroundColor: 'black',
     color: 'white'
   },
 
